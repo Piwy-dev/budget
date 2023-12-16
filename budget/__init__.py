@@ -43,6 +43,11 @@ def create_app(test_config=None):
     @app.route("/budget-modify", methods=['GET', 'POST'])
     def budget_modify():
         if request.method == 'POST':
+            account = request.form.get('account')
+            amount = request.form.get('amount')
+
+            db.modify_budget(account, amount)
+
             return redirect('/')
         return render_template('budget-modify.html')
     

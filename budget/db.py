@@ -66,6 +66,25 @@ def add_activity(title: str, type: str, amount: int, label: str, date: datetime)
     )
 
 
+def modify_budget(account: str, amount: int):
+    """
+    Modify the budget of an account.
+
+    Args:
+    - `account`: The account to modify.
+    - `amount`: The amount to modify the account by.
+    """
+    db = get_db()
+    if account == 'bank':
+        db.execute(
+            'UPDATE bank SET amount = ?', (amount,)
+        )
+    else:
+        db.execute(
+            'UPDATE cash SET amount = ?', (amount,)
+        )
+
+
 @click.command('init-db')
 @with_appcontext
 def init_db_command():
