@@ -2,5 +2,5 @@
 
 Run the website with :
 ```bash
-flask --app app run --debug
+flask --app budget run --debug
 ```

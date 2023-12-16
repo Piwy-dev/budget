@@ -1,0 +1,14 @@
+.activity-add {
+    background-color: #35ffc2;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #000;
+    cursor: pointer;
+    margin: 0 10px;
+    box-shadow: none;
+}
+
+.activity-add:hover {
+    background-color: #c5f9ea;
+}
