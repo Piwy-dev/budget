@@ -29,7 +29,6 @@ def create_app(test_config=None):
     @app.route("/activity-add", methods=['GET', 'POST'])
     def activity_add():
         if request.method == 'POST':
-            print(request.form)
             title = request.form.get('title')
             type = request.form.get('type')
             amount = request.form.get('amount')
@@ -40,6 +39,12 @@ def create_app(test_config=None):
 
             return redirect('/')
         return render_template('activity-add.html')
+    
+    @app.route("/budget-modify", methods=['GET', 'POST'])
+    def budget_modify():
+        if request.method == 'POST':
+            return redirect('/')
+        return render_template('budget-modify.html')
     
     db.init_app(app)
 
