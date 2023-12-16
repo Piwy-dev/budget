@@ -1,11 +1,9 @@
-.activity-add {
-    background-color: #35ffc2;
+.home-button {
     border-radius: 5px;
     font-size: 20px;
     padding: 5px 10px;
-    color: #000;
     cursor: pointer;
-    margin: 0 10px;
+    margin: 5px 10px;
     box-shadow: none;
     border: none;
     outline: none;
@@ -14,15 +12,30 @@
     padding: 10px 20px;
 }
 
-.activity-add:hover {
-    background-color: #a7ffe6;
-    color: #353434;
-}
-
 .main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+#activity-add {
+    background-color: #35ffc2;
+    color: #000;
+}
+
+#activity-add:hover {
+    background-color: #a7ffe6;
+    color: #353434;
+}
+
+#budget-modify {
+    background-color: #35a7ff;
+    color: #000;
+}
+
+#budget-modify:hover {
+    background-color: #a7d4ff;
+    color: #353434;
 }
