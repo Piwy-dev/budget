@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Budget</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <!--script src="{{ url_for('static', filename='js/index.js') }}"></script-->
+</head>
+
+<body class="main">
+    <h1>Nouvelle activité</h1>
+    <form action="/submit-activity" method="POST">
+        <label for="title">Titre:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="type">Type:</label>
+        <select id="type" name="tyoe" required>
+            <option value="spending">Dépense</option>
+            <option value="revenue">Revenu</option>
+        </select><br><br>
+
+        <label for="amount">Montant:</label>
+        <input type="number" id="amount" name="amount" required><br><br>
+
+        <label for="label">Label:</label>
+        <select id="label" name="label" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

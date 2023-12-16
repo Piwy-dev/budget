@@ -25,6 +25,12 @@ def create_app(test_config=None):
     def home():
         return render_template('home.html')
     
+    @app.route("/activity-add", methods=['GET', 'POST'])
+    def activity_add():
+        if request.method == 'POST':
+            return redirect('/activity-add')
+        return render_template('activity-add.html')
+    
     db.init_app(app)
 
     with app.app_context():
