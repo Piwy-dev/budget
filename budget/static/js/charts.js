@@ -48,7 +48,8 @@ export function showExpensesChart() {
             },
             legend: {
                 labels: {
-                    fontColor: '#373738'
+                    fontColor: '#373738',
+                    fontSize: 15,
                 },
             },
         }
@@ -101,7 +102,8 @@ export function showRevenueChart() {
             },
             legend: {
                 labels: {
-                    fontColor: '#373738'
+                    fontColor: '#373738',
+                    fontSize: 15,
                 },
             },
         }

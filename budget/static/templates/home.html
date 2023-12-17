@@ -11,11 +11,36 @@
 </head>
 
 <body class="main">
-    <div class="account-select">
-        <label for="account">Compte :</label>
+    <div class="home-select account">
+        <!--label for="account">Compte</label-->
         <select name="account" id="account">
             <option value="bank">Banque</option>
             <option value="cash">Liquide</option>
+        </select>
+    </div>
+    <div class="home-select year">
+        <!--label for="year">Année</label-->
+        <select name="year" id="year">
+            <option value="2023">2023</option>
+            <option value="204">2024</option>
+        </select>
+    </div>
+    <div class="home-select month">
+        <!--label for="month">Mois</label-->
+        <select name="month" id="month">
+            <option value="january">Janvier</option>
+            <option value="ferbruary">Février</option>
+            <option value="march">Mars</option>
+            <option value="april">Avril</option>
+            <option value="may">Mai</option>
+            <option value="june">Juin</option>
+            <option value="july">Juillet</option>
+            <option value="august">Août</option>
+            <option value="september">Septembre</option>
+            <option value="october">Octobre</option>
+            <option value="november">Novembre</option>
+            <option value="december">Décembre</option>
+            <option value="all">Tous les mois</option>
         </select>
     </div>
     <p>Banque : {{ bank }} €</p>

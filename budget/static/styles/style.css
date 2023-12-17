@@ -1,33 +1,3 @@
-.account-select {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.account-select select {
-    margin: 10px 0px 0px 0;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #cb7dfc;
-    color: #3a243f;
-    box-shadow: none;
-    border: none;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.account-select select:hover {
-    background-color: #e0b3ff;
-    color: #7a5e80;
-}
-
-.account-select label {
-    margin: 0px 0px 0px 10px;
-    padding: 10px;
-    font-size: 18px;
-}
-
 .chart {
     width: 50%; /* Set the width to 50% for two columns */
     height: 400px;
@@ -57,9 +27,51 @@
     padding: 10px 20px;
 }
 
+.home-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.home-select select {
+    margin: 10px 0px 0px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #cb7dfc;
+    color: #3a243f;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    -webkit-appearance: none; /* Remove the default arrow */
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.home-select select:hover {
+    background-color: #e0b3ff;
+    color: #7a5e80;
+}
+
 .main {
     margin-top: 20px;
     text-align: center;
+}
+
+.month {
+    left: 164px;
+}
+
+.month select {
+    background-color: #7d9ffc;
+    color: #3a243f;
+}
+
+.month select:hover {
+    background-color: #b3c7ff;
+    color: #7a5e80;
 }
 
 .submit-button {
@@ -80,6 +92,20 @@
 
 .submit-button:hover {
     background-color: #e0b3ff;
+    color: #7a5e80;
+}
+
+.year {
+    left: 90px;
+}
+
+.year select {
+    background-color: #fc7d94;
+    color: #3a243f;
+}
+
+.year select:hover {
+    background-color: #ffb3c0;
     color: #7a5e80;
 }
 
