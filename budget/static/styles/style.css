@@ -20,6 +20,27 @@
     height: 100vh;
 }
 
+.submit-button {
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 5px 10px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #cb7dfc;
+    color: #3a243f;
+}
+
+.submit-button:hover {
+    background-color: #e0b3ff;
+    color: #7a5e80;
+}
+
 #activity-add {
     background-color: #35ffc2;
     color: #000;
