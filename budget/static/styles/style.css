@@ -1,3 +1,33 @@
+.account-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.account-select select {
+    margin: 10px 0px 0px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #cb7dfc;
+    color: #3a243f;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.account-select select:hover {
+    background-color: #e0b3ff;
+    color: #7a5e80;
+}
+
+.account-select label {
+    margin: 0px 0px 0px 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
 .chart {
     width: 50%; /* Set the width to 50% for two columns */
     height: 400px;

@@ -11,6 +11,13 @@
 </head>
 
 <body class="main">
+    <div class="account-select">
+        <label for="account">Compte :</label>
+        <select name="account" id="account">
+            <option value="bank">Banque</option>
+            <option value="cash">Liquide</option>
+        </select>
+    </div>
     <p>Banque : {{ bank }} €</p>
     <p>Liquide : {{ cash }} €</p>
     <div class="charts-container">
