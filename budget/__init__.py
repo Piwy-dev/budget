@@ -24,7 +24,8 @@ def create_app(test_config=None):
    # create the pages
     @app.route("/")
     def home():
-        return render_template('home.html')
+        bank, cash = db.get_budget()
+        return render_template('home.html', bank=bank, cash=cash)
     
     @app.route("/activity-add", methods=['GET', 'POST'])
     def activity_add():

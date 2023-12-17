@@ -1,5 +1,3 @@
---DROP TABLE IF EXISTS activity;
-
 CREATE TABLE IF NOT EXISTS bank (
     amount INTEGER DEFAULT 0
 );

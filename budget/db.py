@@ -44,6 +44,25 @@ def init_app(app):
     """
     Register the database functions with the Flask app.
     """
+    # add 0 to the bank and cash accounts if they don't exist
+    with app.app_context():
+        db = get_db()
+        bank = db.execute(
+            'SELECT amount FROM bank'
+        ).fetchone()
+        cash = db.execute(
+            'SELECT amount FROM cash'
+        ).fetchone()
+        if bank is None:
+            db.execute(
+                'INSERT INTO bank (amount) VALUES (0)'
+            )
+        if cash is None:
+            db.execute(
+                'INSERT INTO cash (amount) VALUES (0)'
+            )
+        db.commit()
+        
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
 
@@ -64,6 +83,19 @@ def add_activity(title: str, type: str, amount: int, label: str, date: datetime)
         'INSERT INTO activity (title, type, amount, label, date) VALUES (?, ?, ?, ?, ?)',
         (title, type, amount, label, date)
     )
+    db.commit()
+
+
+def get_activities():
+    """
+    Get all activities from the database.
+    """
+    db = get_db()
+    activities = db.execute(
+        'SELECT * FROM activity ORDER BY date DESC'
+    ).fetchall()
+    activities = [dict(activity) for activity in activities]
+    return activities
 
 
 def modify_budget(account: str, amount: int):
@@ -83,6 +115,23 @@ def modify_budget(account: str, amount: int):
         db.execute(
             'UPDATE cash SET amount = ?', (amount,)
         )
+    db.commit()
+
+
+def get_budget():
+    """
+    Get the budget of the bank and cash accounts.
+    """
+    db = get_db()
+    bank = db.execute(
+        'SELECT amount FROM bank'
+    ).fetchone()
+    cash = db.execute(
+        'SELECT amount FROM cash'
+    ).fetchone()
+    bank = dict(bank)['amount']
+    cash = dict(cash)['amount']
+    return bank, cash
 
 
 @click.command('init-db')
