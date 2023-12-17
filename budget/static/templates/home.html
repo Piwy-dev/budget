@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width">
     <title>Budget</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-    <!--script src="{{ url_for('static', filename='js/index.js') }}"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js/index.js') }}"></script>
 </head>
 
 <body class="main">
     <p>Banque : {{ bank }} €</p>
     <p>Liquide : {{ cash }} €</p>
+    <div id="expenseschartcontainer">
+        <canvas id="expenseschart"></canvas>
+    </div>
     <a class="home-button" id="budget-modify" href="budget-modify">Modifier le budget de départ</a>
     <a class="home-button" id="activity-add" href="activity-add">Ajouter une activité</a>
+
+    <p class="hidden" id="expenses">{{ expenses }}</p>
 </body>
 
 </html>
