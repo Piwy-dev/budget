@@ -23,17 +23,17 @@ export function showExpensesChart() {
             datasets: [{
                 label: 'Dépenses',
                 backgroundColor: [
-                    'rgb(255, 0, 0)',
-                    'rgb(0, 0, 255)',
-                    'rgb(0, 255, 0)',
-                    'rgb(100, 100, 100)',
-                    'rgb(255, 255, 0)',
-                    'rgb(255, 0, 255)',
-                    'rgb(0, 255, 255)',
-                    'rgb(255, 100, 0)',
-                    'rgb(0, 100, 255)'
+                    '#6396d4',
+                    '#d46396',
+                    '#96d463',
+                    '#d4d463',
+                    '#d49663',
+                    '#63d4d4',
+                    '#d46363',
+                    '#63d496',
+                    '#d4d4d4',
                 ],
-                borderColor: 'rgb(0, 0, 0)',
+                borderColor: '#373738',
                 data: [expenses['food'], expenses['clothes'], expenses['wifi'], expenses['scouts'], expenses['entertainment'], expenses['asbo'], expenses['transport'], expenses['travel'], expenses['other']]
             }]
         },
@@ -48,7 +48,7 @@ export function showExpensesChart() {
             },
             legend: {
                 labels: {
-                    fontColor: '#000000'
+                    fontColor: '#373738'
                 },
             },
         }
@@ -81,12 +81,12 @@ export function showRevenueChart() {
             datasets: [{
                 label: 'Revenus',
                 backgroundColor: [
-                    'rgb(255, 0, 0)',
-                    'rgb(0, 0, 255)',
-                    'rgb(0, 255, 0)',
-                    'rgb(100, 100, 100)',
+                    '#3fab4a',
+                    '#f5a742',
+                    '#c863d4',
+                    '#42f5a7',
                 ],
-                borderColor: 'rgb(0, 0, 0)',
+                borderColor: '#373738',
                 data: [revenues['payback'], revenues['parents'], revenues['salary'], revenues['other']]
             }]
         },
@@ -101,7 +101,7 @@ export function showRevenueChart() {
             },
             legend: {
                 labels: {
-                    fontColor: '#000000'
+                    fontColor: '#373738'
                 },
             },
         }
