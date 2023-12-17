@@ -1,8 +1,8 @@
-import { showExpensesChart } from './charts.js';
+import { showExpensesChart, showRevenueChart } from './charts.js';
 
 window.onload = function() {
     if (window.location.pathname === '/') {
-        console.log("index.js: window.location.pathname === '/'");
         showExpensesChart();
+        showRevenueChart();
     }
 };

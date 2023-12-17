@@ -1,3 +1,14 @@
+.chart {
+    width: 50%; /* Set the width to 50% for two columns */
+    height: 400px;
+}
+
+.charts-container {
+    display: flex; /* Use flexbox to align the charts side by side */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .hidden {
     display: none;
 }

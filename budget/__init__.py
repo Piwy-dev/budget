@@ -31,11 +31,11 @@ def create_app(test_config=None):
     @app.route("/")
     def home():
         bank, cash = db.get_budget()
-        activities = db.get_activities()
 
         #just a test to show if the chart is working
         expenses = {"food": 30, "clothes": 10, "wifi": 4, "entertainment": 15,"scouts": 8, "asbo": 9, "transport": 7, "travel": 12, "other": 5}
-        return render_template('home.html', bank=bank, cash=cash, activities=activities, expenses=expenses)
+        revenues = {"payback": 50, "parents": 30, "salary": 15, "other": 5}
+        return render_template('home.html', bank=bank, cash=cash, expenses=expenses, revenues=revenues)
     
     @app.route("/activity-add", methods=['GET', 'POST'])
     def activity_add():

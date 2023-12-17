@@ -42,7 +42,60 @@ export function showExpensesChart() {
             maintainAspectRatio: false,
             title: {
                 display: true,
-                text: 'Percentage of each transportation mode in the previously selected city',
+                text: 'Dépenses par catégorie',
+                fontColor: '#000000',
+                fontSize: 30,
+            },
+            legend: {
+                labels: {
+                    fontColor: '#000000'
+                },
+            },
+        }
+    });
+}
+
+
+/** 
+ * @function showRevenuesChart
+ * @description Create and show the revenues chart.
+ */
+export function showRevenueChart() {
+    var revenues = (document.getElementById("revenues").textContent);
+    revenues = JSON.parse(revenues.replace(/'/g, '"'));
+    
+    // Create the canvas for the charts
+    var revenuesChart = document.createElement("canvas");
+    revenuesChart.id = "revenueschart";
+
+    // Add the canvas to the page
+    var revenuesChartContainer = document.getElementById("revenueschartcontainer");
+    revenuesChartContainer.appendChild(revenuesChart);
+
+    // Create the chart
+    var revenuesChart = document.getElementById('revenueschart').getContext('2d');
+    new Chart(revenuesChart, {
+        type: 'pie',
+        data: {
+            labels: ['Remboursements', 'Forfait parents', 'Salaire', 'Autres'],
+            datasets: [{
+                label: 'Revenus',
+                backgroundColor: [
+                    'rgb(255, 0, 0)',
+                    'rgb(0, 0, 255)',
+                    'rgb(0, 255, 0)',
+                    'rgb(100, 100, 100)',
+                ],
+                borderColor: 'rgb(0, 0, 0)',
+                data: [revenues['payback'], revenues['parents'], revenues['salary'], revenues['other']]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            title: {
+                display: true,
+                text: 'Revenus par catégorie',
                 fontColor: '#000000',
                 fontSize: 30,
             },
