@@ -20,6 +20,12 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    # register the database commands
+    db.init_app(app)
+
+    with app.app_context():
+        db.init_db()
+
 
    # create the pages
     @app.route("/")
@@ -31,12 +37,13 @@ def create_app(test_config=None):
     def activity_add():
         if request.method == 'POST':
             title = request.form.get('title')
-            type = request.form.get('type')
+            account = request.form.get('account')
             amount = request.form.get('amount')
             label = request.form.get('label')
             date = datetime.strptime(request.form.get('date'), '%Y-%m-%d')
 
-            db.add_activity(title, type, amount, label, date)
+            db.add_activity(title, amount, label, date)
+            db.modify_budget(account, amount)
 
             return redirect('/')
         return render_template('activity-add.html')
@@ -52,9 +59,4 @@ def create_app(test_config=None):
             return redirect('/')
         return render_template('budget-modify.html')
     
-    db.init_app(app)
-
-    with app.app_context():
-        db.init_db()
-
     return app

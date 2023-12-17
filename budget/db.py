@@ -35,53 +35,51 @@ def init_db():
     """
     Initialize the database.
     """
+    # Create the database
     db = get_db()
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
+    
+    # add 0 to the bank and cash accounts if they don't exist
+    bank = db.execute(
+        'SELECT amount FROM bank'
+    ).fetchone()
+    cash = db.execute(
+        'SELECT amount FROM cash'
+    ).fetchone()
+    if bank is None:
+        db.execute(
+            'INSERT INTO bank (amount) VALUES (0)'
+        )
+    if cash is None:
+        db.execute(
+            'INSERT INTO cash (amount) VALUES (0)'
+        )
+    db.commit()
     
 
 def init_app(app):
     """
     Register the database functions with the Flask app.
     """
-    # add 0 to the bank and cash accounts if they don't exist
-    with app.app_context():
-        db = get_db()
-        bank = db.execute(
-            'SELECT amount FROM bank'
-        ).fetchone()
-        cash = db.execute(
-            'SELECT amount FROM cash'
-        ).fetchone()
-        if bank is None:
-            db.execute(
-                'INSERT INTO bank (amount) VALUES (0)'
-            )
-        if cash is None:
-            db.execute(
-                'INSERT INTO cash (amount) VALUES (0)'
-            )
-        db.commit()
-        
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
 
 
-def add_activity(title: str, type: str, amount: int, label: str, date: datetime):
+def add_activity(title: str, amount: int, label: str, date: datetime):
     """
     Add an activity to the database.
 
     Args:
     - `title`: The title of the activity.
-    - `type`: The type of the activity.
     - `amount`: The amount of the activity.
     - `label`: The label of the activity.
     - `date`: The date of the activity.
     """
     db = get_db()
     db.execute(
-        'INSERT INTO activity (title, type, amount, label, date) VALUES (?, ?, ?, ?, ?)',
-        (title, type, amount, label, date)
+        'INSERT INTO activity (title, amount, label, date) VALUES (?, ?, ?, ?)',
+        (title, amount, label, date)
     )
     db.commit()
 
