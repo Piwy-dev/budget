@@ -12,21 +12,18 @@
 
 <body class="main">
     <div class="home-select account">
-        <!--label for="account">Compte</label-->
         <select name="account" id="account">
             <option value="bank">Banque</option>
             <option value="cash">Liquide</option>
         </select>
     </div>
     <div class="home-select year">
-        <!--label for="year">Année</label-->
         <select name="year" id="year">
             <option value="2023">2023</option>
             <option value="204">2024</option>
         </select>
     </div>
     <div class="home-select month">
-        <!--label for="month">Mois</label-->
         <select name="month" id="month">
             <option value="january">Janvier</option>
             <option value="ferbruary">Février</option>
@@ -43,19 +40,22 @@
             <option value="all">Tous les mois</option>
         </select>
     </div>
-    <p>Banque : {{ bank }} €</p>
-    <p>Liquide : {{ cash }} €</p>
+    <p class="balance">Solde actuel : {{ bank }} €</p>
     <div class="charts-container">
         <div class="chart" id="expenseschartcontainer">
+            <a class="chart-button expenses" id="expenses-button" href="activity-add">Ajouter une dépense</a>
             <canvas id="expenseschart"></canvas>
+            <p class="chart-total">Total des dépenses : 130 €</p>
         </div>
+        
         <div class="chart" id="revenueschartcontainer">
+            <a class="chart-button revenues" id="revenues-button" href="activity-add">Ajouter un revenu</a>
             <canvas id="revenueschart"></canvas>
+            <p class="chart-total">Total des revenus : 130 €</p>
         </div>
     </div>
     
     <a class="home-button" id="budget-modify" href="budget-modify">Modifier le budget de départ</a>
-    <a class="home-button" id="activity-add" href="activity-add">Ajouter une activité</a>
 
     <p class="hidden" id="expenses">{{ expenses }}</p>
     <p class="hidden" id="revenues">{{ revenues }}</p>

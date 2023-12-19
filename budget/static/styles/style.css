@@ -1,12 +1,59 @@
-.chart {
-    width: 50%; /* Set the width to 50% for two columns */
-    height: 400px;
+.balance {
+    font-size: 20px;
 }
 
 .charts-container {
-    display: flex; /* Use flexbox to align the charts side by side */
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    margin: 20px 0;
+}
+
+.chart {
+    width: 45%; /* Adjust the width as needed, considering margins and padding */
+    height: 400px;
+    position: relative;
+}
+
+.chart canvas {
+    width: 100%;
+    height: 80%; /* Adjust as needed */
+    margin-top: 50px;
+}
+
+.chart-button {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+
+.chart-total {
+    font-size: 20px;
+}
+
+.expenses {
+    background-color: #f44336;
+}
+
+.expenses:hover {
+    background-color: #da190b;
+}
+
+.revenues {
+    background-color: #4caf50;
+}
+
+.revenues:hover {
+    background-color: #46a049;
 }
 
 .hidden {
@@ -14,17 +61,16 @@
 }
 
 .home-button {
+    margin-top: 20px; /* Added margin to separate from the charts */
     border-radius: 5px;
     font-size: 20px;
-    padding: 5px 10px;
     cursor: pointer;
-    margin: 5px 10px;
+    padding: 10px 20px;
     box-shadow: none;
     border: none;
     outline: none;
     transition: all 0.3s ease;
     text-decoration: none;
-    padding: 10px 20px;
 }
 
 .home-select {
@@ -56,7 +102,7 @@
 }
 
 .main {
-    margin-top: 20px;
+    margin: 20px 0px 20px 0px;
     text-align: center;
 }
 
@@ -112,6 +158,9 @@
 #activity-add {
     background-color: #35ffc2;
     color: #000;
+    position: absolute;
+    bottom: 60px;
+    margin: 0 0 20px 0;
 }
 
 #activity-add:hover {
@@ -120,8 +169,11 @@
 }
 
 #budget-modify {
+    position: absolute;
+    bottom: 0;
     background-color: #35a7ff;
     color: #000;
+    margin: 0 0 20px 0;
 }
 
 #budget-modify:hover {
