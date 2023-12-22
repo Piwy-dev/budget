@@ -132,6 +132,46 @@ def get_budget():
     return bank, cash
 
 
+def get_expenses():
+    """
+    Get the expenses from the database then calculate the percentage of each expense category.
+    """
+    db = get_db()
+    expenses = db.execute(
+        'SELECT * FROM expense'
+    ).fetchall()
+    expenses = [dict(expense) for expense in expenses]
+
+    total_expenses = 0
+    for expense in expenses:
+        total_expenses += expense['amount']
+
+    expenses_percentages = {"food": 0, "clothes": 0, "wifi": 0, "entertainment": 0,"scouts": 0, "asbo": 0, "transport": 0, "travel": 0, "other": 0}
+    for expense in expenses:
+        expenses_percentages[expense['label']] = round(expense['amount']/total_expenses * 100, 2)
+    return expenses_percentages
+
+
+def get_revenues():
+    """
+    Get the revenues from the database then calculate the percentage of each revenue category.
+    """
+    db = get_db()
+    revenues = db.execute(
+        'SELECT * FROM revenue'
+    ).fetchall()
+    revenues = [dict(revenue) for revenue in revenues]
+
+    total_revenues = 0
+    for revenue in revenues:
+        total_revenues += revenue['amount']
+
+    revenues_percentages = {"salary": 0, "other": 0}
+    for revenue in revenues:
+        revenues_percentages[revenue['label']] = round(revenue['amount']/total_revenues * 100, 2)
+    return revenues_percentages
+
+
 @click.command('init-db')
 @with_appcontext
 def init_db_command():

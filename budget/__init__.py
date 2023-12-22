@@ -32,7 +32,8 @@ def create_app(test_config=None):
     def home():
         bank, cash = db.get_budget()
 
-        #just a test to show if the chart is working
+        expenses = db.get_expenses()
+        revenues = db.get_revenues()
         expenses = {"food": 30, "clothes": 10, "wifi": 4, "entertainment": 15,"scouts": 8, "asbo": 9, "transport": 7, "travel": 12, "other": 5}
         revenues = {"payback": 50, "parents": 30, "salary": 15, "other": 5}
         return render_template('home.html', bank=bank, cash=cash, expenses=expenses, revenues=revenues)
