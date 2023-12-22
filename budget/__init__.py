@@ -41,13 +41,14 @@ def create_app(test_config=None):
     @app.route("/activity-add", methods=['GET', 'POST'])
     def activity_add():
         if request.method == 'POST':
+            type = request.form.get('type')
             title = request.form.get('title')
             account = request.form.get('account')
             amount = request.form.get('amount')
             label = request.form.get('label')
             date = datetime.strptime(request.form.get('date'), '%Y-%m-%d')
 
-            db.add_activity(title, amount, label, date)
+            db.add_activity(type, title, account, amount, label, date)
             db.modify_budget(account, amount)
 
             return redirect('/')

@@ -66,11 +66,12 @@ def init_app(app):
     app.cli.add_command(init_db_command)
 
 
-def add_activity(title: str, amount: int, label: str, date: datetime):
+def add_activity(type: str, title: str, account: str, amount: int, label: str, date: datetime):
     """
     Add an activity to the database.
 
     Args:
+    - `type`: The type of the activity (expense or revenue)
     - `title`: The title of the activity.
     - `amount`: The amount of the activity.
     - `label`: The label of the activity.
@@ -78,8 +79,8 @@ def add_activity(title: str, amount: int, label: str, date: datetime):
     """
     db = get_db()
     db.execute(
-        'INSERT INTO activity (title, amount, label, date) VALUES (?, ?, ?, ?)',
-        (title, amount, label, date)
+        f'INSERT INTO {type} (title, account, amount, label, date) VALUES (?, ?, ?, ?, ?)',
+        (title, account, amount, label, date)
     )
     db.commit()
 
