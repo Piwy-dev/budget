@@ -1,0 +1,62 @@
+.cash-form {
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coins, .banknotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coins-item, .banknotes-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cash-form label {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px 10px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #232323;
+}
+
+.cash-form input {
+    width: 100px;
+    padding: 5px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#save-cash {
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 5px 10px;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #cb7dfc;
+    color: #3a243f;
+    margin-top: 20px;
+}
+
+#save-cash:hover {
+    background-color: #e0b3ff;
+    color: #7a5e80;
+}

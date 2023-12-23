@@ -40,7 +40,7 @@ def init_db():
     with current_app.open_resource('schema.sql') as f:
         db.executescript(f.read().decode('utf8'))
     
-    # add 0 to the bank and cash accounts if they don't exist
+    # initialize the bank and cash accounts, if they don't exist
     bank = db.execute(
         'SELECT amount FROM bank'
     ).fetchone()

@@ -65,4 +65,9 @@ def create_app(test_config=None):
             return redirect('/')
         return render_template('budget-modify.html')
     
+    @app.route("/accounts")
+    def accounts():
+        bank, cash = db.get_budget()
+        return render_template('accounts.html', bank=bank, cash=cash)
+    
     return app

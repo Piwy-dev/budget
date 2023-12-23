@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Budget</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/accounts.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js/index.js') }}"></script>
+</head>
+
+<body class="main">
+    <div class="home-select account">
+        <select name="account" id="account">
+            <option value="bank">Banque</option>
+            <option value="cash">Liquide</option>
+        </select>
+    </div>
+
+    <p>Banque : {{ bank }}</p>
+    <p>Liquide : {{ cash }}</p>
+
+    <div class="cash-form">
+        <div class="coins">
+            <div class="coins-item">
+                <label for="5cents">Pièces 5 cents :</label>
+                <input type="number" name="5cents" id="5cents" min="0" max="999" value="0">
+            </div>
+
+            <div class="coins-item">
+                <label for="10cents">Pièces 10 cents :</label>
+                <input type="number" name="10cents" id="10cents" min="0" max="999" value="0">
+            </div>
+
+            <div class="coins-item">
+                <label for="20cents">Pièces 20 cents :</label>
+                <input type="number" name="20cents" id="20cents" min="0" max="999" value="0">
+            </div>
+
+            <div class="coins-item">
+                <label for="50cents">Pièces 50 cents :</label>
+                <input type="number" name="50cents" id="50cents" min="0" max="999" value="0">
+            </div>
+
+            <div class="coins-item">
+                <label for="1euro">Pièces 1 euro :</label>
+                <input type="number" name="1euro" id="1euro" min="0" max="999" value="0">
+            </div>
+
+            <div class="coins-item">
+                <label for="2euros">Pièces 2 euros :</label>
+                <input type="number" name="2euros" id="2euros" min="0" max="999" value="0">
+            </div>
+        </div>
+        <div class="banknotes">
+            <div class="banknotes-item">
+                <label for="5euros">Billets 5 euros :</label>
+                <input type="number" name="5euros" id="5euros" min="0" max="999" value="0">
+            </div>
+
+            <div class="banknotes-item">
+                <label for="10euros">Billets 10 euros :</label>
+                <input type="number" name="10euros" id="10euros" min="0" max="999" value="0">
+            </div>
+
+            <div class="banknotes-item">
+                <label for="20euros">Billets 20 euros :</label>
+                <input type="number" name="20euros" id="20euros" min="0" max="999" value="0">
+            </div>
+
+            <div class="banknotes-item">
+                <label for="50euros">Billets 50 euros :</label>
+                <input type="number" name="50euros" id="50euros" min="0" max="999" value="0">
+            </div>
+
+            <div class="banknotes-item">
+                <label for="100euros">Billets 100 euros :</label>
+                <input type="number" name="100euros" id="100euros" min="0" max="999" value="0">
+            </div>
+
+            <div class="banknotes-item">
+                <label for="200euros">Billets 200 euros :</label>
+                <input type="number" name="200euros" id="200euros" min="0" max="999" value="0">
+            </div>
+        </div>
+        
+        <button id="save-cash">Enregistrer</button>
+    </div>
+</body>
+
+</html>

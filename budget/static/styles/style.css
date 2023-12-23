@@ -33,7 +33,8 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
-
+    transition: all 0.3s ease;
+    color: #fff;
 }
 
 .chart-total {
@@ -41,19 +42,19 @@
 }
 
 .expenses {
-    background-color: #f44336;
+    background-color: #f03224;
 }
 
 .expenses:hover {
-    background-color: #da190b;
+    background-color: #f6645a;
 }
 
 .revenues {
-    background-color: #4caf50;
+    background-color: #4ea851;
 }
 
 .revenues:hover {
-    background-color: #46a049;
+    background-color: #76c678;
 }
 
 .hidden {
