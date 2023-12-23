@@ -3,7 +3,7 @@
  * @description Create and show the expenses chart.
  */
 export function showExpensesChart() {
-    var expenses = (document.getElementById("expenses").textContent);
+    var expenses = document.getElementById("expenses").textContent;
     expenses = JSON.parse(expenses.replace(/'/g, '"'));
     
     // Create the canvas for the charts
@@ -62,7 +62,7 @@ export function showExpensesChart() {
  * @description Create and show the revenues chart.
  */
 export function showRevenueChart() {
-    var revenues = (document.getElementById("revenues").textContent);
+    var revenues = document.getElementById("revenues").textContent;
     revenues = JSON.parse(revenues.replace(/'/g, '"'));
     
     // Create the canvas for the charts

@@ -17,12 +17,14 @@
             <option value="cash">Liquide</option>
         </select>
     </div>
+
     <div class="home-select year">
         <select name="year" id="year">
             <option value="2023">2023</option>
             <option value="204">2024</option>
         </select>
     </div>
+    
     <div class="home-select month">
         <select name="month" id="month">
             <option value="january">Janvier</option>
@@ -40,7 +42,7 @@
             <option value="all">Tous les mois</option>
         </select>
     </div>
-    <p class="balance">Solde actuel : {{ bank }} €</p>
+    <p class="balance" id="balance">Solde actuel : xx €</p>
     <div class="charts-container">
         <div class="chart" id="expenseschartcontainer">
             <a class="chart-button expenses" id="expenses-button" href="activity-add">Ajouter une dépense</a>
@@ -57,6 +59,7 @@
     
     <a class="home-button" id="budget-modify" href="budget-modify">Modifier le budget de départ</a>
 
+    <p class="hidden" id="budget">{{ bank }}, {{ cash }}</p>
     <p class="hidden" id="expenses">{{ expenses }}</p>
     <p class="hidden" id="revenues">{{ revenues }}</p>
 </body>

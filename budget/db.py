@@ -120,6 +120,10 @@ def modify_budget(account: str, amount: int):
 def get_budget():
     """
     Get the budget of the bank and cash accounts.
+
+    Returns:
+    - `bank`: The budget of the bank account.
+    - `cash`: The budget of the cash account.
     """
     db = get_db()
     bank = db.execute(
@@ -128,8 +132,8 @@ def get_budget():
     cash = db.execute(
         'SELECT amount FROM cash'
     ).fetchone()
-    bank = dict(bank)['amount']
-    cash = dict(cash)['amount']
+    bank: int  = dict(bank)['amount']
+    cash: int = dict(cash)['amount']
     return bank, cash
 
 
